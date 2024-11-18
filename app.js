@@ -27,16 +27,17 @@ async function connectWallet() {
 
 // Fungsi untuk menulis kontrak
 async function writeContract() {
-    const value = document.getElementById("inputValue").value;
-    if (!value) {
-        alert("Masukkan nilai terlebih dahulu!");
+    const tokenAddress = document.getElementById("inputValue").value;
+    if (!tokenAddress) {
+        alert("Masukkan alamat token!");
         return;
     }
     try {
-        const result = await contract.methods.release(value).send({ from: userAccount });
+        const result = await contract.methods.release(tokenAddress).send({ from: userAccount });
         document.getElementById("status").innerText = "Transaksi berhasil: " + result.transactionHash;
     } catch (error) {
         document.getElementById("status").innerText = "Gagal mengirim transaksi!";
         console.error(error);
     }
 }
+

@@ -33,7 +33,7 @@ async function writeContract() {
         return;
     }
     try {
-        const result = await contract.methods.yourFunctionName(value).send({ from: userAccount });
+        const result = await contract.methods.release(value).send({ from: userAccount });
         document.getElementById("status").innerText = "Transaksi berhasil: " + result.transactionHash;
     } catch (error) {
         document.getElementById("status").innerText = "Gagal mengirim transaksi!";

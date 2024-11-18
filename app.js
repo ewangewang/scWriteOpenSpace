@@ -33,6 +33,7 @@ async function writeContract() {
         return;
     }
     try {
+        console.log(contract.methods)
         const result = await contract.methods.release(tokenAddress).send({ from: userAccount });
         document.getElementById("status").innerText = "Transaksi berhasil: " + result.transactionHash;
     } catch (error) {

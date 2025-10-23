@@ -1,3 +1,4 @@
+dia adalah
 muigknin
 dia adalah
 muigknin
